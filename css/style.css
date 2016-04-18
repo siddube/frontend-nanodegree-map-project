@@ -1,0 +1,89 @@
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+  border-radius: 0;
+}
+
+button.navbar-toggle {
+    background-color: #ddd;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: #aaa;
+}
+.sidebar-wrapper {
+    margin: -20px 0 0;
+    padding: 0;
+    transition: left .3s;
+    -moz-transition: left .3s; 
+    -webkit-transition: left .3s; 
+    -o-transition: left .3s;
+}
+.sidebar-wrapper.in {
+    left: -100%;
+    transition: left 1s;
+    -moz-transition: left 1s; 
+    -webkit-transition: left 1s; 
+    -o-transition: left 1s;
+}
+.sidebar-nav {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #030303;
+}
+ 
+.sidebar-nav li {
+    text-indent: 15px;
+    line-height: 40px;
+}
+ 
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+ 
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+    border-left: #116fdd 2px solid;
+}
+ 
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+ 
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+ 
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+ 
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+.map-wrapper{
+    margin: 0;
+    padding: 0;
+}
+#map { 
+    height: 85vh;
+}
+@media screen and (min-width: 768px) {
+    .map-wrapper{
+        margin: -20px 0 0;
+        padding: 0;
+}
+}
