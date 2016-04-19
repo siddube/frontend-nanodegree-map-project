@@ -21,6 +21,7 @@ button.navbar-toggle {
     -moz-transition: left .3s; 
     -webkit-transition: left .3s; 
     -o-transition: left .3s;
+    background-color: #030303;
 }
 .sidebar-wrapper.in {
     left: -100%;
@@ -28,6 +29,12 @@ button.navbar-toggle {
     -moz-transition: left 1s; 
     -webkit-transition: left 1s; 
     -o-transition: left 1s;
+}
+.sidebar-wrapper > .glyphicon-search {
+    font-size: 120%;
+    margin: 5px;
+    padding: 5px;
+    color: #fff;
 }
 .sidebar-nav {
     width: 100%;
@@ -74,12 +81,26 @@ button.navbar-toggle {
     color: #fff;
     background: none;
 }
+#search-place{
+    background-color: #030303;
+}
+#search-place.form-control {
+    display: inline;
+    width: 80%;
+}
 .map-wrapper{
     margin: 0;
     padding: 0;
 }
 #map { 
-    height: 85vh;
+    height: 60vh;
+}
+
+#wiki-wrapper {
+    margin: 20px 0;
+}
+.panel {
+    border-radius: 0;
 }
 @media screen and (min-width: 768px) {
     .map-wrapper{

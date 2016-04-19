@@ -24,4 +24,13 @@ function initMap() {
     center: {lat: 12.9716, lng: 77.5946},
     zoom: 13
     });
+    var placeItemLat = parseFloat(initialPlaces[0].lat);
+    var placeItemLong = parseFloat(initialPlaces[0].long);
+    var myLatLong = {'lat':placeItemLat, 'lng':placeItemLong};
+    var marker = new google.maps.Marker({
+    position: myLatLong,
+    map: map,
+    title: 'Hello World!'
+  });
 }
+
