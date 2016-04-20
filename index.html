@@ -28,9 +28,10 @@
             </div><!-- bs-example-navbar-collapse-1 -->
         </nav>
         <div class="container-fluid">
-            <div id="row">
+            <div class="row">
                 <!-- Sidebar -->
-                <div class="col-sm-2 sidebar-wrapper">
+                <div class="col-md-2 sidebar-wrapper">
+                    <p class="title hidden-xs">Places to Visit</p>
                     <input id="search-place" type="text" class="form-control"><span class="glyphicon glyphicon-search pull-right"></span>
                     <ul class="sidebar-nav nav-pills nav-stacked" id="menu" data-bind="foreach: initialPlaces">
                         <li>
@@ -38,17 +39,27 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-sm-10 map-wrapper">
+                <div class="col-md-10 map-wrapper">
                     <div id="map"></div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-5">
+                <div class="col-md-5 col-md-offset-2">
                     <div id="wiki-wrapper">
-                        <div class="panel panel-default">
+                        <div class="panel panel-info">
                             <div class="panel-heading">Wiki</div>
                             <div class="panel-body">
                             Wiki Content
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div id="places-wrapper">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">Google Places</div>
+                            <div class="panel-body">
+                            Places Content
                             </div>
                         </div>
                     </div>

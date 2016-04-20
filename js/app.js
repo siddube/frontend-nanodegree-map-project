@@ -1,54 +1,36 @@
 var initialPlaces = [
     {
-        'name' : 'Lal Bagh',
-        'lat' : '12.95008',
-        'long' : '77.58582'
-    },
-    {
         'name' : 'Vidhana Soudha',
         'lat' : '12.97971',
-        'long' : '77.59079'
+        'lng' : '77.59079'
     },
     {
         'name' : 'Cubbon Park',
         'lat' : '12.97559',
-        'long' : '77.59268'
+        'lng' : '77.59268'
     },
     {
         'name' : 'Visvesvaraya Museum',
         'lat' : '12.97527',
-        'long' : '77.5963'
+        'lng' : '77.5963'
     },
     {
-        'name' : 'Bannerghatta Biological Park',
-        'lat' : '12.76530',
-        'long' : '77.56605'
-    },
-    {
-        'name' : 'Bangalore Palace',
-        'lat' : '12.99861',
-        'long':	'77.59228'
-    },
-    {
-        'name' : 'Tippu Sultan Summer Palace',
-        'lat' : '12.99861',
-        'long':	'77.59228'
+        'name' : 'Jawaharlal Nehru Planetarium',
+        'lat' : '12.9848',
+        'lng':	'77.589266'
     },
     {
         'name' : 'M. Chinnaswamy Stadium',
         'lat' : '12.97866',
-        'long':	'77.59975'
-        	
-    },
-    {
-        'name' : 'ISKCON Bangalore',
-        'lat' : '13.01041',
-        'long' : '77.55091'
+        'lng':	'77.59975'
     }
+    
 ];
 
 var Place = function(data) {
     this.name = ko.observable(data.name);
+    this.lat = ko.observable(data.lat);
+    this.lng = ko.observable(data.lng);
 };
 
 var ViewModel = function() {
