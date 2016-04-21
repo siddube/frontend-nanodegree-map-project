@@ -110,6 +110,10 @@ button.navbar-toggle {
 .panel {
     border-radius: 0;
 }
+
+.hidden {
+    display: none;
+}
 @media screen and (min-width: 992px) {
     .map-wrapper{
         margin: -20px 0 0;

@@ -27,21 +27,19 @@ $(document).ready(function(){
         $('.sidebar-wrapper').css('left','-100%').css('height','0');
     }
 });
-
+var marker;
 function initMap() {
     // Create a map object and specify the DOM element for display.
     var map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 12.97959, lng: 77.59268},
         zoom: 15
     });
-    for(var i = 0;i <= initialPlaces.length -1; i++) {
-        var placeLat = parseFloat(initialPlaces[i].lat);
-        var placeLng = parseFloat(initialPlaces[i].lng);
-        var myLatLng = {'lat': placeLat,'lng': placeLng};
-        var marker = new google.maps.Marker({
+    for(var i= 0; i<= initialPlaces.length - 1; i++) {
+        var myLatLng = initialPlaces[i].latLng;
+        marker = new google.maps.Marker({
             position: myLatLng,
             map: map,
         });
     }
-    
 }
+

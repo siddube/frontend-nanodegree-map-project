@@ -18,7 +18,7 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  id="menu-toggle">
                   <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
                 </button>
-                <a class="navbar-brand" href="#"><i class="fa fa-rocket fa-4"></i>Namma Ooru</a>
+                <a class="navbar-brand" href="#"><i class="fa fa-rocket fa-4"></i>Namma Bengaluru</a>
             </div><!-- navbar-header-->
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -32,8 +32,9 @@
                 <!-- Sidebar -->
                 <div class="col-md-2 sidebar-wrapper">
                     <p class="title hidden-xs">Places to Visit</p>
-                    <input id="search-place" type="text" class="form-control"><span class="glyphicon glyphicon-search pull-right"></span>
-                    <ul class="sidebar-nav nav-pills nav-stacked" id="menu" data-bind="foreach: initialPlaces">
+                    <input id="search-place" type="text" class="form-control"0 data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off">
+                    <span class="glyphicon glyphicon-search pull-right" data-bind="click: function() { filter('Vidhana Soudha') }"></span>
+                    <ul class="sidebar-nav nav-pills nav-stacked" id="menu" data-bind="foreach: filterPlaces">
                         <li>
                             <a href="#" data-bind="text: $data.name"></a>
                         </li>
@@ -76,7 +77,8 @@
         <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBToMBlaghf9nyvg-9ZX4TOyMpDd7zeLHc&callback=initMap">
         </script>
-        <script src="js/main.js"></script>
         <script src="js/app.js"></script>
+        <script src="js/main.js"></script>
+        
     </body>
 </html>
