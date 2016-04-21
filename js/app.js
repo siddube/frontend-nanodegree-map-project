@@ -45,19 +45,21 @@ var ViewModel = function() {
     initialPlaces.forEach(function(place) {
         self.visiblePlaces.push(place);
     });
-    
+    var counter = 0;
     self.filterPlaces = ko.computed(function() {
+        //self.visiblePlaces.removeAll();
+        
         return ko.utils.arrayFilter(self.placeList(), function(places){
-            self.visiblePlaces.removeAll();
-            
+            counter++;
+            thatPlace = places;
             var result = places.name().toLowerCase().indexOf(self.query().toLowerCase()) >= 0;
-            if (result) { 
-               self.visiblePlaces.push(places);
-                console.log(self.visiblePlaces());
+            if (result && counter > initialPlaces.length) { 
+               self.visiblePlaces.push(places)
+               places.marker.setVisible(true);
             }
-            self.visiblePlaces().forEach(function(place) {
-                //place.marker.setVisible(true);
-            });
+            else if (!result && counter > initialPlaces.length) {
+                places.marker.setVisible(false);//.setVisible(false)
+            }
             return result;
         });
     });

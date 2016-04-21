@@ -36,10 +36,12 @@ function initMap() {
     });
     for(var i= 0; i<= initialPlaces.length - 1; i++) {
         var myLatLng = initialPlaces[i].latLng;
-        marker = new google.maps.Marker({
-            position: myLatLng,
+        var markerOptions = {
             map: map,
-        });
+            position: myLatLng
+        };
+    
+    myViewM.placeList()[i].marker = new google.maps.Marker(markerOptions);
     }
 }
 
