@@ -68,7 +68,9 @@ button.navbar-toggle {
  
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus {
-    text-decoration: none;
+    background-color: #555555;
+    color: #eae8e8;
+    border-left: #116fdd 2px solid;
 }
  
 .sidebar-nav > .sidebar-brand {

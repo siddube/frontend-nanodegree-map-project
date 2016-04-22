@@ -25,8 +25,7 @@ var initialPlaces = [
 
 var Place = function(data) {
     this.name = ko.observable(data.name);
-    this.lat = ko.observable(data.lat);
-    this.lng = ko.observable(data.lng);
+    this.latLng = ko.observable(data.latLng); 
 };
 
 var ViewModel = function() {
@@ -46,12 +45,12 @@ var ViewModel = function() {
         self.visiblePlaces.push(place);
     });
     var counter = 0;
+    
     self.filterPlaces = ko.computed(function() {
         //self.visiblePlaces.removeAll();
         
         return ko.utils.arrayFilter(self.placeList(), function(places){
             counter++;
-            thatPlace = places;
             var result = places.name().toLowerCase().indexOf(self.query().toLowerCase()) >= 0;
             if (result && counter > initialPlaces.length) { 
                self.visiblePlaces.push(places)
@@ -63,6 +62,29 @@ var ViewModel = function() {
             return result;
         });
     });
+    
+    self.placeClick = function(clickedPlace){
+        if (this.name) {
+           for(var i = 0; i< self.placeList().length; i++){
+                self.placeList()[i].marker.setAnimation(null);
+            }
+            map.panTo(clickedPlace.latLng());
+            clickedPlace.marker.setAnimation(google.maps.Animation.BOUNCE);
+            console.log(this.name);
+            var wikiapi = 'https://en.wikipedia.org/w/api.php?action=opensearch&search='+ this.name();
+            var $wikiElem = $('#wiki-panel');
+            $wikiElem.html('');
+            $.ajax({
+                'url': wikiapi,
+                'dataType': 'jsonp',
+                'success': function(data) {
+                    $.each(data[1], function(i, item) {
+                        $wikiElem.append('<p><a href="https://en.wikipedia.org/wiki/'+item+'"target="blank" >'+item+'</a></p>');
+                    });
+                }
+            });
+        }
+    };
 };
 
 var myViewM = new ViewModel();

@@ -35,7 +35,7 @@
                     <input id="search-place" type="text" class="form-control"0 data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off">
                     <span class="glyphicon glyphicon-search pull-right" data-bind="click: function() { filter('Vidhana Soudha') }"></span>
                     <ul class="sidebar-nav nav-pills nav-stacked" id="menu" data-bind="foreach: filterPlaces">
-                        <li>
+                        <li data-bind="click: $parent.placeClick">
                             <a href="#" data-bind="text: $data.name"></a>
                         </li>
                     </ul>
@@ -49,8 +49,8 @@
                     <div id="wiki-wrapper">
                         <div class="panel panel-info">
                             <div class="panel-heading">Wiki</div>
-                            <div class="panel-body">
-                            Wiki Content
+                            <div class="panel-body" id="wiki-panel">
+                            <p>Click on Places to get related Wiki Articles</p>
                             </div>
                         </div>
                     </div>
