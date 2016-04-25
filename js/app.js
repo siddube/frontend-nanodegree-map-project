@@ -89,7 +89,7 @@ var ViewModel = function() {
         if (this.name) {
             //setup Info Window
             infoWindow.setPosition(clickedPlace.marker.position);
-            infoWindow.setContent('<p class="lead">'+clickedPlace.name()+'</p><br><p>'+clickedPlace.description()+'</p>');
+            infoWindow.setContent('<p>'+clickedPlace.description()+'</p>');
             infoWindow.open(map, marker);
 
             //Set All Animations to Null
@@ -129,7 +129,7 @@ var ViewModel = function() {
             place.marker.setAnimation(null); // Set All Animation to Null
             if(place.marker.position === c.position) { //If Marker Positions Match
                 map.panTo(place.marker.position);// Pan Map to Selected Place
-                infoWindow.setContent('<p class="lead">'+place.name()+'</p><br><p>'+place.description()+'</p>'); // Setup Content
+                infoWindow.setContent('<p>'+place.description()+'</p>'); // Setup Content
                 place.marker.setAnimation(google.maps.Animation.BOUNCE); // Animate Marker Linked to the click
 
                 //Make Ajax call to Wiki Api
