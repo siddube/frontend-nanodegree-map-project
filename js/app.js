@@ -110,7 +110,7 @@ var ViewModel = function() {
                 'dataType': 'jsonp',
                 'success': function(data) {
                     $.each(data[1], function(i, item) {
-                        $wikiElem.append('<p><a href="https://en.wikipedia.org/wiki/'+item+'"target="blank" >'+item+'</a></p>');
+                        $wikiElem.append('<p><a href="https://en.wikipedia.org/wiki/'+item+'"target="_blank" >'+item+'</a></p>');
                     });
                 }
             });
@@ -140,7 +140,7 @@ var ViewModel = function() {
                     'dataType': 'jsonp',
                     'success': function(data) {
                         $.each(data[1], function(i, item) {
-                            $wikiElem.append('<p><a href="https://en.wikipedia.org/wiki/'+item+'"target="blank" >'+item+'</a></p>');
+                            $wikiElem.append('<p><a href="https://en.wikipedia.org/wiki/'+item+'"target="_blank" >'+item+'</a></p>');
                         });
                     }
                 });
