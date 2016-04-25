@@ -60,6 +60,7 @@ function initMap() {
     }
     //Add Info Window
     infoWindow = new google.maps.InfoWindow({
-        content: infoWindowContent
+        content: infoWindowContent,
+        pixelOffset: new google.maps.Size(0, -50)
     });
 }

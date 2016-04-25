@@ -128,6 +128,7 @@ var ViewModel = function() {
         self.placeList().forEach(function(place) {
             place.marker.setAnimation(null); // Set All Animation to Null
             if(place.marker.position === c.position) { //If Marker Positions Match
+                map.panTo(place.marker.position);// Pan Map to Selected Place
                 infoWindow.setContent('<p class="lead">'+place.name()+'</p><br><p>'+place.description()+'</p>'); // Setup Content
                 place.marker.setAnimation(google.maps.Animation.BOUNCE); // Animate Marker Linked to the click
 
