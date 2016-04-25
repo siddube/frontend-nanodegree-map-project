@@ -23,6 +23,10 @@ $(document).ready(function(){
         $('.sidebar-wrapper').css('left','-100%').css('height','0');
     }
     
+    $(document).ajaxError(function( event, request, settings ) {
+        $('#wiki-panel').html('<p>Hmm! This is unusual but there is an error fetching Wiki articles</p>');
+    });
+    
     
 });
 var map;
