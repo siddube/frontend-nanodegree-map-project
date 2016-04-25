@@ -4,12 +4,12 @@
         <title>Map Project</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale= 1">
-        
+
         <!-- Latest compiled and minified Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/style.css">
-        
+
     </head>
     <body>
         <nav class="navbar navbar-inverse no-margin">
@@ -32,7 +32,7 @@
                 <!-- Sidebar -->
                 <div class="col-md-2 sidebar-wrapper">
                     <p class="title hidden-xs">Places to Visit</p>
-                    <input id="search-place" type="text" class="form-control"0 data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off">
+                    <input id="search-place" type="text" class="form-control" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off">
                     <span class="glyphicon glyphicon-search pull-right" data-bind="click: function() { filter('Vidhana Soudha') }"></span>
                     <ul class="sidebar-nav nav-pills nav-stacked" id="menu" data-bind="foreach: filterPlaces">
                         <li data-bind="click: $parent.placeClick">
@@ -69,6 +69,6 @@
         </script>
         <script src="js/app.js"></script>
         <script src="js/main.js"></script>
-        
+
     </body>
 </html>
