@@ -1,3 +1,4 @@
+'use strict';
 //Intersting Places JSON
 var initialPlaces = [
     {
@@ -76,6 +77,7 @@ var ViewModel = function() {
             }
             else if (!result && filterCounter > initialPlaces.length) {
                 places.marker.setVisible(false);//.setVisible(false)
+                infoWindow.close();
             }
             return result;
         });
@@ -112,6 +114,9 @@ var ViewModel = function() {
                     $.each(data[1], function(i, item) {
                         $wikiElem.append('<p><a href="https://en.wikipedia.org/wiki/'+item+'"target="_blank" >'+item+'</a></p>');
                     });
+                },
+                'error': function() {
+                    $wikiElem.html('<p>Hmm! This is unusual but there is an error fetching Wiki articles</p>');
                 }
             });
         }
@@ -143,6 +148,9 @@ var ViewModel = function() {
                         $.each(data[1], function(i, item) {
                             $wikiElem.append('<p><a href="https://en.wikipedia.org/wiki/'+item+'"target="_blank" >'+item+'</a></p>');
                         });
+                    },
+                    'error': function() {
+                        $wikiElem.html('<p>Hmm! This is unusual but there is an error fetching Wiki articles</p>');
                     }
                 });
             }
